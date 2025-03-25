@@ -1,7 +1,6 @@
 import Product from "./product";
 
 function ProductList({ dessert, loading }) {
-  console.log(dessert);
   return (
     <div className="desserts">
       <h1 className="disserts-title">Disserts</h1>

@@ -1,12 +1,11 @@
 import { useGlobalContext } from "../hooks/useGlobalContext";
 
 function Product({ d }) {
-  const { dispatch, cart } = useGlobalContext;
+  const { dispatch, state } = useGlobalContext();
+  const { cart } = state;
   const { id, name, category, price, image } = d;
 
-  const areadyAdded = cart.find((d) => {
-    d.id == id;
-  });
+  const alreadyAdded = cart?.find((item) => item.id === id);
 
   return (
     <div className="dessert-card">
@@ -17,13 +16,12 @@ function Product({ d }) {
         <img className="desserts-card-image" src={image.thumbnail} alt="" />
       </picture>
       <div className="buttons-wrapper">
-        {/* SHOP */}
-        {!areadyAdded && (
+        {!alreadyAdded ? (
           <button
             onClick={() => {
               dispatch({
                 type: "ADD_TO_CART",
-                payloud: { ...d, amount: 1 },
+                payload: { ...d, amount: 1 },
               });
             }}
             className="btn add-to-card-btn"
@@ -33,9 +31,31 @@ function Product({ d }) {
               <span>Add to Cart</span>
             </span>
           </button>
+        ) : (
+          <div className="quantity-controls">
+            <button
+              onClick={() => dispatch({ type: "DECREMENT", payload: id })}
+              className="decrement-btn"
+            >
+              -
+            </button>
+            <span className="item-amount">{alreadyAdded.amount}</span>
+            <button
+              onClick={() => dispatch({ type: "INCREMENT", payload: id })}
+              className="increment-btn"
+            >
+              +
+            </button>
+            <button
+              onClick={() =>
+                dispatch({ type: "REMOVE_FROM_CART", payload: id })
+              }
+              className="remove-btn"
+            >
+              ❌
+            </button>
+          </div>
         )}
-
-        {/* INCER && DEC */}
       </div>
       <div className="desserts-card-body">
         <p className="desserts-card-category">{category}</p>

@@ -185,3 +185,136 @@ img {
   gap: 0.8rem;
   align-items: center;
 }
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.quantity-controls button {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.quantity-controls .increment-btn {
+  background-color: #1dd1a1;
+}
+
+.quantity-controls .decrement-btn {
+  background-color: #feca57;
+  color: black;
+}
+
+.quantity-controls .remove-btn {
+  background-color: #ee5253;
+}
+
+.quantity-controls button:hover {
+  opacity: 0.8;
+}
+
+.quantity-controls button:active {
+  transform: scale(0.95);
+}
+
+.quantity-controls .item-amount {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  min-width: 30px;
+  text-align: center;
+}
+
+.cart-container {
+  max-width: 400px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #b84e1f;
+}
+
+.cart-items {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.cart-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.crat-item-p {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+  margin-top: 5px;
+}
+
+.cart-item-price {
+  font-weight: 400;
+  font-size: var(--font-size-preset-4);
+}
+
+.cart-item-quantity {
+  color: #b84e1f;
+  font-weight: bold;
+  font-size: var(--font-size-preset-4);
+}
+
+.cart-item-name {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.cart-item-total-price {
+  font-weight: bold;
+  font-size: var(--font-size-preset-4);
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+.cart-total-price {
+  font-weight: 700;
+  font-size: var(--font-size-preset-2);
+}
+
+.confirm-order-btn {
+  width: 100%;
+  background: #b84e1f;
+  color: white;
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.confirm-order-btn:hover {
+  background: #8c3b17;
+}
