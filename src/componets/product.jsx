@@ -37,21 +37,23 @@ function Product({ d }) {
               onClick={() => dispatch({ type: "DECREMENT", payload: id })}
               className="decrement-btn"
             >
-              <img src="../images/icon-decrement-quantity.svg" alt="" />
+              -
             </button>
             <span className="item-amount">{alreadyAdded.amount}</span>
             <button
               onClick={() => dispatch({ type: "INCREMENT", payload: id })}
               className="increment-btn"
             >
-              <img src="../images/icon-increment-quantity.svg" alt="" />
+              +
             </button>
             <button
               onClick={() =>
                 dispatch({ type: "REMOVE_FROM_CART", payload: id })
               }
               className="remove-btn"
-            ></button>
+            >
+              ❌
+            </button>
           </div>
         )}
       </div>
