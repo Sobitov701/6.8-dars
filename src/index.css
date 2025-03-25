@@ -270,6 +270,7 @@ img {
 }
 
 .cart-item-price {
+  color: var(--color-rose-500);
   font-weight: 400;
   font-size: var(--font-size-preset-4);
 }
@@ -288,6 +289,7 @@ img {
 .cart-item-total-price {
   font-weight: bold;
   font-size: var(--font-size-preset-4);
+  color: var(--color-rose-500);
 }
 
 .cart-total {

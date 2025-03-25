@@ -16,7 +16,7 @@ function YourCart() {
             <h3 className="cart-item-name">{item.name}</h3>
             <p className="crat-item-p">
               <p className="cart-item-quantity">{item.amount}x</p>
-              <p className="cart-item-price">${item.price}</p>
+              <p className="cart-item-price">@${item.price}</p>
               <p className="cart-item-total-price">
                 ${(item.price * item.amount).toFixed(2)}
               </p>
